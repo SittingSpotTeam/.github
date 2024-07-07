@@ -54,7 +54,7 @@ Lista di cose che cerca:
 
 - GET query (query: x,y,raggio,tag)
 
-- [ ] Api doc
+- [x] Api doc
 - [ ] Api impl
 - [ ] Logic impl
 - [ ] Docker
@@ -89,7 +89,7 @@ Dopo che ha fatto una query aggiorna query optimizer.
 
 - GET query (query: x,y,raggio,tag)
 
-- [ ] Api doc
+- [x] Api doc
 - [ ] Api impl
 - [ ] Logic impl
 - [ ] Docker
@@ -111,7 +111,7 @@ permette di cercare sitting spots.
 
 - GET sitting spot (parametri: x,y,raggio?,tag)
 
-- [ ] Api doc
+- [x] Api doc
 - [ ] Api impl
 - [ ] Logic impl
 - [ ] Docker
