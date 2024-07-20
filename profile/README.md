@@ -8,10 +8,10 @@ gestisce l'access al database dei sitting spot.
 - POST sitting spot
 
 - [x] Api doc
-- [ ] Api impl
+- [x] Api impl
 - [ ] Logic impl
-- [ ] Data model doc
-- [ ] Data model impl
+- [x] Data model doc
+- [x] Data model impl
 - [ ] Docker
 
 ## Review Data Layer (Davide)
