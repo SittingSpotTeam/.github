@@ -39,8 +39,8 @@ Vari get per cercare roba
 - [x] Api doc
 - [ ] Api impl
 - [ ] Logic impl
-- [ ] Data model doc
-- [ ] Data model impl
+- [x] Data model doc
+- [x] Data model impl
 - [ ] Docker
 
 ## Search Adapter (Leo)
