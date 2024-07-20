@@ -90,7 +90,7 @@ Dopo che ha fatto una query aggiorna query optimizer.
 - GET query (query: x,y,raggio,tag)
 
 - [x] Api doc
-- [ ] Api impl
+- [x] Api impl
 - [ ] Logic impl
 - [ ] Docker
 
