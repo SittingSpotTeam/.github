@@ -55,7 +55,7 @@ Lista di cose che cerca:
 - GET query (query: x,y,raggio,tag)
 
 - [x] Api doc
-- [ ] Api impl
+- [x] Api impl
 - [ ] Logic impl
 - [ ] Docker
 
@@ -112,7 +112,7 @@ permette di cercare sitting spots.
 - GET sitting spot (parametri: x,y,raggio?,tag)
 
 - [x] Api doc
-- [ ] Api impl
+- [x] Api impl
 - [ ] Logic impl
 - [ ] Docker
 
