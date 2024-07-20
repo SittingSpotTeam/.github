@@ -101,7 +101,7 @@ Prende in carico i dati di una query e determina se c'è un risultato precedente
 - GET optimization (query: x,y,raggio,tag)
 
 - [x] Api doc
-- [ ] Api impl
+- [x] Api impl
 - [ ] Logic impl
 - [ ] Docker
 
