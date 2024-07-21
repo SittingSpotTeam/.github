@@ -1,5 +1,9 @@
 # Sitting Spot
 
+
+[<img src="SittingSpotArchitecture.png">](https://drive.google.com/drive/folders/1S5lNHMo_M6JluELz0qqumQg7LT27HOX2?usp=drive_link)
+
+
 ## Sitting Spot Data Layer (Leo)
 
 gestisce l'access al database dei sitting spot.
