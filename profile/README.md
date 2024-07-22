@@ -1,7 +1,6 @@
 # Sitting Spot
 
-
-[<img src="SittingSpotArchitecture.png">](https://drive.google.com/drive/folders/1S5lNHMo_M6JluELz0qqumQg7LT27HOX2?usp=drive_link)
+![Architecture](https://drive.google.com/uc?id=1zdPsijnLdop0RNGODiwsK2JCv_GjBfz1)
 
 
 ## Sitting Spot Data Layer (Leo)
