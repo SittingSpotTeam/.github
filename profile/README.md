@@ -130,12 +130,6 @@ permette di aggiungere o leggere review.
 - [ ] Logic impl
 - [ ] Docker
 
-- [ ] Api doc
-- [ ] Api impl
-- [ ] Logic impl
-- [ ] Docker
-
-
 
 
 
