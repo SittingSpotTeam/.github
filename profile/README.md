@@ -24,7 +24,7 @@ gestisce l'accesso al database delle review.
 - GET list of review by sitting spot
 - POST review of a sitting spot
 
-- [ ] Api doc
+- [x] Api doc
 - [ ] Api impl
 - [ ] Logic impl
 - [ ] Data model doc
@@ -68,7 +68,7 @@ Servizio che integra un servizio esterno per rilevare profanità nel testo.
 
 - POST review -> si/no? oppure censura
 
-- [ ] Api doc
+- [x] Api doc
 - [ ] Api impl
 - [ ] Logic impl
 - [ ] Docker
@@ -80,7 +80,7 @@ Tipo "comodo" "luminoso" ecc.
 
 - POST review -> list<tag>
 
-- [ ] Api doc
+- [x] Api doc
 - [ ] Api impl
 - [ ] Logic impl
 - [ ] Docker
@@ -125,6 +125,10 @@ permette di aggiungere o leggere review.
 
 - GET review da id
 - POST review da id
+- [x] Api doc
+- [x] Api impl
+- [ ] Logic impl
+- [ ] Docker
 
 - [ ] Api doc
 - [ ] Api impl
