@@ -44,7 +44,7 @@ Vari get per cercare roba
 - [x] Logic impl
 - [x] Data model doc
 - [x] Data model impl
-- [ ] Docker
+- [x] Docker
 
 ## Search Adapter (Leo)
 
