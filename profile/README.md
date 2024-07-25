@@ -12,7 +12,7 @@ gestisce l'access al database dei sitting spot.
 
 - [x] Api doc
 - [x] Api impl
-- [ ] Logic impl
+- [x] Logic impl
 - [x] Data model doc
 - [x] Data model impl
 - [ ] Docker
@@ -40,8 +40,8 @@ Vari get per cercare roba
 - POST new query
 
 - [x] Api doc
-- [ ] Api impl
-- [ ] Logic impl
+- [x] Api impl
+- [x] Logic impl
 - [x] Data model doc
 - [x] Data model impl
 - [ ] Docker
@@ -94,7 +94,7 @@ Dopo che ha fatto una query aggiorna query optimizer.
 
 - [x] Api doc
 - [x] Api impl
-- [ ] Logic impl
+- [x] Logic impl
 - [ ] Docker
 
 ## Query Optimizer (Leo)
@@ -105,7 +105,7 @@ Prende in carico i dati di una query e determina se c'è un risultato precedente
 
 - [x] Api doc
 - [x] Api impl
-- [ ] Logic impl
+- [x] Logic impl
 - [ ] Docker
 
 ## Search Process Layer (Leo)
