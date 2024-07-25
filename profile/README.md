@@ -69,7 +69,7 @@ Servizio che integra un servizio esterno per rilevare profanità nel testo.
 - POST review -> si/no? oppure censura
 
 - [x] Api doc
-- [ ] Api impl
+- [x] Api impl
 - [ ] Logic impl
 - [ ] Docker
 
@@ -81,8 +81,8 @@ Tipo "comodo" "luminoso" ecc.
 - POST review -> list<tag>
 
 - [x] Api doc
-- [ ] Api impl
-- [ ] Logic impl
+- [x] Api impl
+- [x] Logic impl
 - [ ] Docker
 
 ## Search Logic (Leo)
