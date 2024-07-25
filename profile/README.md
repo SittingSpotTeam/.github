@@ -59,7 +59,7 @@ Lista di cose che cerca:
 
 - [x] Api doc
 - [x] Api impl
-- [ ] Logic impl
+- [x] Logic impl
 - [ ] Docker
 
 ## Moderation (Davide)
@@ -116,7 +116,7 @@ permette di cercare sitting spots.
 
 - [x] Api doc
 - [x] Api impl
-- [ ] Logic impl
+- [x] Logic impl
 - [ ] Docker
 
 ## Review Process Layer (Davide)
@@ -127,7 +127,7 @@ permette di aggiungere o leggere review.
 - POST review da id
 - [x] Api doc
 - [x] Api impl
-- [ ] Logic impl
+- [x] Logic impl
 - [ ] Docker
 
 
