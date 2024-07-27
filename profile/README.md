@@ -25,10 +25,10 @@ gestisce l'accesso al database delle review.
 - POST review of a sitting spot
 
 - [x] Api doc
-- [ ] Api impl
-- [ ] Logic impl
-- [ ] Data model doc
-- [ ] Data model impl
+- [x] Api impl
+- [x] Logic impl
+- [x] Data model doc
+- [x] Data model impl
 - [ ] Docker
 
 ## Query Data Layer (Leo)
