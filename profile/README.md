@@ -70,7 +70,7 @@ Servizio che integra un servizio esterno per rilevare profanità nel testo.
 
 - [x] Api doc
 - [x] Api impl
-- [ ] Logic impl
+- [x] Logic impl
 - [ ] Docker
 
 ## Tag Extractor (Davide)
