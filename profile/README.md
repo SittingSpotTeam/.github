@@ -15,7 +15,7 @@ gestisce l'access al database dei sitting spot.
 - [x] Logic impl
 - [x] Data model doc
 - [x] Data model impl
-- [ ] Docker
+- [x] Docker
 
 ## Review Data Layer (Davide)
 
@@ -60,7 +60,7 @@ Lista di cose che cerca:
 - [x] Api doc
 - [x] Api impl
 - [x] Logic impl
-- [ ] Docker
+- [x] Docker
 
 ## Moderation (Davide)
 
@@ -95,7 +95,7 @@ Dopo che ha fatto una query aggiorna query optimizer.
 - [x] Api doc
 - [x] Api impl
 - [x] Logic impl
-- [ ] Docker
+- [x] Docker
 
 ## Query Optimizer (Leo)
 
@@ -106,7 +106,7 @@ Prende in carico i dati di una query e determina se c'è un risultato precedente
 - [x] Api doc
 - [x] Api impl
 - [x] Logic impl
-- [ ] Docker
+- [x] Docker
 
 ## Search Process Layer (Leo)
 
@@ -117,7 +117,7 @@ permette di cercare sitting spots.
 - [x] Api doc
 - [x] Api impl
 - [x] Logic impl
-- [ ] Docker
+- [x] Docker
 
 ## Review Process Layer (Davide)
 
