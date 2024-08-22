@@ -3,133 +3,119 @@
 ![Architecture](https://drive.google.com/uc?id=1zdPsijnLdop0RNGODiwsK2JCv_GjBfz1)
 
 
-## Sitting Spot Data Layer (Leo)
+## Demo deploy
 
-gestisce l'access al database dei sitting spot.
+To deploy a demo of the service, first clone the [deploy repository](https://github.com/SittingSpotTeam/deploy).
+Then navigate to the `dockercompose` folder and run `docker-compose -f sittingspot-compose.yaml`.
+Note: be sure to have ports from 8080 to 8090 free to deploy the application.
 
-- GET sitting spot by parameters
-- POST sitting spot
+## API
 
-- [x] Api doc
-- [x] Api impl
-- [x] Logic impl
-- [x] Data model doc
-- [x] Data model impl
-- [x] Docker
+This section will assume that the deploy has been conducted with the instructions in the section above, so each service is reacheable from localhost given the correct port.
 
-## Review Data Layer (Davide)
+- moderationservice -> 8080
+- queryoptimizer -> 8082
+- reviewdatalayer -> 8083
+- reviewprocesslayer -> 8084
+- searchadapter -> 8085
+- searchprocesslayer -> 8086
+- searchservice -> 8087
+- sittingspotdatalayer -> 8088
+- tagextractor -> 8089
+- querydatalayer -> 8090
 
-gestisce l'accesso al database delle review.
+Each service has in its repository an `api.yaml` file with a more formal definition of its APIs.
 
-- GET list of review by sitting spot
-- POST review of a sitting spot
+### searchprocesslayer
 
-- [x] Api doc
-- [x] Api impl
-- [x] Logic impl
-- [x] Data model doc
-- [x] Data model impl
-- [ ] Docker
+#### GET host/api/v1/?x={longitude}&y={latutide}&area={r_area}
 
-## Query Data Layer (Leo)
+Allow to search for sitting spots in a given area with center (latutude,longitude), the radius of the area searched is r_area.
+Will also update the query db with the result obtained.
 
-gestisce l'accesso al database delle query effettuate.
+### reviewprocesslayer
 
-- GET query that are inside a range
-Vari get per cercare roba
-- POST new query
+#### GET host/api/v1?id={sitting_spot_id}
 
-- [x] Api doc
-- [x] Api impl
-- [x] Logic impl
-- [x] Data model doc
-- [x] Data model impl
-- [x] Docker
+Retrieves the reviews of the sitting spot with id sitting_spot_id.
 
-## Search Adapter (Leo)
+#### POST host/api/v1/{sitting_spot_id}
 
-Permette di cercare sitting spot su OSM e dal database interno.
-Dove per sitting spot si intende tutto ciò che potrebbe permettere di sedersi.
-E salva le entrate su Sitting Spot Data Layer.
-
-Lista di cose che cerca:
-- 
-
-- GET query (query: x,y,raggio,tag)
-
-- [x] Api doc
-- [x] Api impl
-- [x] Logic impl
-- [x] Docker
-
-## Moderation (Davide)
-
-Servizio che integra un servizio esterno per rilevare profanità nel testo.
-
-- POST review -> si/no? oppure censura
-
-- [x] Api doc
-- [x] Api impl
-- [x] Logic impl
-- [x] Docker
-
-## Tag Extractor (Davide)
-
-Dalla review cerca dei pattern predefiniti per aggiungere dei tag agli oggetti.
-Tipo "comodo" "luminoso" ecc.
-
-- POST review -> list<tag>
-
-- [x] Api doc
-- [x] Api impl
-- [x] Logic impl
-- [x] Docker
-
-## Search Logic (Leo)
-
-Prende in carico una query di ricerca, utilizzando anche il query optimizer per fare short circuit del risultato, se no chiama search adapter.
-Dopo che ha fatto una query aggiorna query optimizer.
-
-- GET query (query: x,y,raggio,tag)
-
-- [x] Api doc
-- [x] Api impl
-- [x] Logic impl
-- [x] Docker
-
-## Query Optimizer (Leo)
-
-Prende in carico i dati di una query e determina se c'è un risultato precedente che può essere utilizzato per rispondere.
-
-- GET optimization (query: x,y,raggio,tag)
-
-- [x] Api doc
-- [x] Api impl
-- [x] Logic impl
-- [x] Docker
-
-## Search Process Layer (Leo)
-
-permette di cercare sitting spots.
-
-- GET sitting spot (parametri: x,y,raggio?,tag)
-
-- [x] Api doc
-- [x] Api impl
-- [x] Logic impl
-- [x] Docker
-
-## Review Process Layer (Davide)
-
-permette di aggiungere o leggere review.
-
-- GET review da id
-- POST review da id
-- [x] Api doc
-- [x] Api impl
-- [x] Logic impl
-- [ ] Docker
+Allow to create a new review on the sitting spot with id sitting_spot_id, the content of the review has to be in the body of the request as a simple string.
 
 
+### searchservice
 
+#### GET host/api/v1?x={longitude}&y={latutide}&area={r_area}
 
+Forward the request to queryoptimizer to get a past result so to avoid querying external services.
+If no result was found will forward the requst to searchadapter.
+
+### searchadapter
+
+#### GET host/api/v1?x={longitude}&y={latutide}&area={r_area}
+
+Will query external services and the internal data layer for sitting spots in the area requested.
+Will also update the internal data layer with new sitting spots.
+
+### sittingspotdatalayer
+
+#### GET host/api/v1
+
+Retrieve all the sitting spots.
+
+#### POST host/api/v1
+
+Add a new sitting spot. 
+refer to `api.yaml` of SittingSpotDataLayer for the format of the body of the request.
+
+#### GET host/api/v1/{id}
+
+Retrieve sitting spot with the specified id.
+
+#### PUT host/api/v1/{id}
+
+Allow to add user-defined (extracted from reviews) labels.
+
+#### GET host/api/v1/find?x={longitude}&y={latutide}&area={r_area}
+
+Retrieve sitting spots in the given area.
+
+### queryoptimizer
+
+#### GET host/api/v1?x={longitude}&y={latutide}&area={r_area}
+
+Get from the query data layer all the past queries that searched spots inside the area specified.
+If it finds any it will aggregate the results removing duplicates and return it.
+
+### querydatalayer
+
+#### GET host/api/v1?x={longitude}&y={latutide}&area={r_area}
+
+Retrieve queries that searched spots inside the area specified.
+
+#### POST host/api/v1
+
+Add a new query with respective result.
+
+### tagextractor
+
+#### POST host/api/v1/{id}
+
+Extract from the content of a review possible labels to be assigned to a sitting spot, and update the entry in sitting spot data layer.
+
+### moderationservice
+
+#### POST host/api/v1
+
+Given the content of a review (as a string in the body of the request) returns a string with censured bits.
+
+### reviewdatalayer
+
+#### GET host/api/v1?id={id}
+
+Retrieve all the reviews of the sitting spot with the id specified.
+
+#### POST host/api/v1
+
+Add a new review relative to a sitting spot.
