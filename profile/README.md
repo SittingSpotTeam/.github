@@ -28,12 +28,16 @@ Each service has in its repository an `api.yaml` file with a more formal definit
 
 ### searchprocesslayer
 
+[api](https://github.com/SittingSpotTeam/SearchProcessLayer/blob/main/api.yaml)
+
 #### GET host/api/v1/?x={longitude}&y={latutide}&area={r_area}
 
 Allow to search for sitting spots in a given area with center (latutude,longitude), the radius of the area searched is r_area.
 Will also update the query db with the result obtained.
 
 ### reviewprocesslayer
+
+[api](https://github.com/SittingSpotTeam/ReviewProcessLayer/blob/main/api.yaml)
 
 #### GET host/api/v1?id={sitting_spot_id}
 
@@ -46,6 +50,8 @@ Allow to create a new review on the sitting spot with id sitting_spot_id, the co
 
 ### searchservice
 
+[api](https://github.com/SittingSpotTeam/SearchService/blob/main/api.yaml)
+
 #### GET host/api/v1?x={longitude}&y={latutide}&area={r_area}
 
 Forward the request to queryoptimizer to get a past result so to avoid querying external services.
@@ -53,12 +59,16 @@ If no result was found will forward the requst to searchadapter.
 
 ### searchadapter
 
+[api](https://github.com/SittingSpotTeam/SearchAdapter/blob/main/api.yaml)
+
 #### GET host/api/v1?x={longitude}&y={latutide}&area={r_area}
 
 Will query external services and the internal data layer for sitting spots in the area requested.
 Will also update the internal data layer with new sitting spots.
 
 ### sittingspotdatalayer
+
+[api](https://github.com/SittingSpotTeam/SittingSpotDataLayer/blob/main/api.yaml)
 
 #### GET host/api/v1
 
@@ -83,12 +93,16 @@ Retrieve sitting spots in the given area.
 
 ### queryoptimizer
 
+[api](https://github.com/SittingSpotTeam/QueryOptimizer/blob/main/api.yaml)
+
 #### GET host/api/v1?x={longitude}&y={latutide}&area={r_area}
 
 Get from the query data layer all the past queries that searched spots inside the area specified.
 If it finds any it will aggregate the results removing duplicates and return it.
 
 ### querydatalayer
+
+[api](https://github.com/SittingSpotTeam/QueryDataLayer/blob/main/api.yaml)
 
 #### GET host/api/v1?x={longitude}&y={latutide}&area={r_area}
 
@@ -115,6 +129,8 @@ Extract from the content of a review possible labels to be assigned to a sitting
 Given the content of a review (as a string in the body of the request) returns a string with censured bits.
 
 ### reviewdatalayer
+
+[api](https://github.com/SittingSpotTeam/ReviewDataLayer/blob/main/api.yaml)
 
 #### GET host/api/v1?id={id}
 
