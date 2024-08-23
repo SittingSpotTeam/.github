@@ -100,11 +100,15 @@ Add a new query with respective result.
 
 ### tagextractor
 
+[api](https://github.com/SittingSpotTeam/TagExtractor/blob/main/api.yaml)
+
 #### POST host/api/v1/{id}
 
 Extract from the content of a review possible labels to be assigned to a sitting spot, and update the entry in sitting spot data layer.
 
 ### moderationservice
+
+[api](https://github.com/SittingSpotTeam/ModerationService/blob/main/api.yaml)
 
 #### POST host/api/v1
 
