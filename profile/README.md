@@ -1,7 +1,6 @@
 # Sitting Spot
 
-![Architecture](https://drive.google.com/uc?id=1zdPsijnLdop0RNGODiwsK2JCv_GjBfz1)
-
+![Architecture](https://drive.google.com/uc?id=1gIltM17cfy5AA-z12VgZY3OfCsxYWYgL)
 
 ## Demo deploy
 
